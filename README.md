@@ -1,73 +1,152 @@
-# Welcome to your Lovable project
+# Personal Expense Tracker
 
-## Project info
+A modern, responsive web application for tracking personal expenses with data visualization and budget management features.
 
-**URL**: https://lovable.dev/projects/47b94d9f-0025-4e5f-a584-e9d820cba011
+## ✨ Features
 
-## How can I edit this code?
+- **Dashboard Overview**: Real-time spending insights and budget progress
+- **Expense Management**: Add, edit, and delete expenses with categorization
+- **Budget Tracking**: Set monthly budgets with progress monitoring and alerts
+- **Data Visualization**: Interactive charts showing spending patterns by category and time
+- **Offline Support**: Local storage for data persistence without internet connection
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-There are several ways of editing your application.
+## 🚀 Tech Stack
 
-**Use Lovable**
+- **React** - UI framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling and design system
+- **Vite** - Build tool and development server
+- **Recharts** - Data visualization
+- **Radix UI** - Accessible UI components
+- **Local Storage** - Data persistence
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/47b94d9f-0025-4e5f-a584-e9d820cba011) and start prompting.
+## 🛠️ Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js (v18 or higher)
+- npm or yarn
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+1. Clone the repository:
+```bash
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
+```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. Install dependencies:
+```bash
+npm install
+```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📱 Usage
 
-**Use GitHub Codespaces**
+1. **Set Your Budget**: Click "Manage Budget" to set your monthly spending limit
+2. **Add Expenses**: Use the "Add Expense" button to record your spending
+3. **Track Progress**: Monitor your budget progress and spending patterns on the dashboard
+4. **Analyze Spending**: View charts to understand your spending habits by category
+5. **Manage Data**: Edit or delete expenses as needed
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎨 Features Overview
 
-## What technologies are used for this project?
+### Dashboard
+- Monthly spending summary
+- Budget progress indicator
+- Average expense calculation
+- Quick access to recent transactions
 
-This project is built with:
+### Expense Categories
+- Food & Dining
+- Transportation
+- Shopping
+- Entertainment
+- Bills & Utilities
+- Healthcare
+- Other
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Visualizations
+- Pie chart for spending by category
+- Bar chart for daily expense trends
+- Budget progress bars
 
-## How can I deploy this project?
+### Alerts
+- Budget exceeded notifications
+- Visual indicators for spending status
 
-Simply open [Lovable](https://lovable.dev/projects/47b94d9f-0025-4e5f-a584-e9d820cba011) and click on Share -> Publish.
+## 🔧 Development
 
-## Can I connect a custom domain to my Lovable project?
+### Available Scripts
 
-Yes, you can!
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Project Structure
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```
+src/
+├── components/
+│   ├── ui/           # Reusable UI components
+│   ├── Dashboard.tsx # Main dashboard
+│   ├── ExpenseChart.tsx
+│   ├── ExpenseList.tsx
+│   └── ...
+├── hooks/
+│   └── useExpenseStore.ts # State management
+├── pages/
+│   └── Index.tsx
+└── ...
+```
+
+## 📊 Data Storage
+
+The app uses browser's local storage to persist data, ensuring your expense data remains private and accessible offline. Data includes:
+
+- Expenses with amounts, categories, descriptions, and dates
+- Budget settings
+- Category preferences
+
+## 🚀 Deployment
+
+This app can be deployed to any static hosting service:
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. Deploy the `dist` folder to your hosting provider
+
+### Deploy with Lovable
+
+Click the "Publish" button in the Lovable editor to deploy instantly.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🔗 Links
+
+- [Live Demo](https://lovable.dev/projects/47b94d9f-0025-4e5f-a584-e9d820cba011)
+- [Lovable Platform](https://lovable.dev)
+
+---
+
+Built with ❤️ using Lovable
