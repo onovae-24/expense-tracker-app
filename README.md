@@ -110,7 +110,7 @@ src/
 
 ## 📊 Data Storage
 
-The app uses browser's local storage to persist data, ensuring your expense data remains private and accessible offline. Data includes:
+The app uses the browser's local storage to persist data, ensuring your expense data remains private and accessible offline. Data includes:
 
 - Expenses with amounts, categories, descriptions, and dates
 - Budget settings
@@ -127,9 +127,6 @@ npm run build
 
 2. Deploy the `dist` folder to your hosting provider
 
-### Deploy with Lovable
-
-Click the "Publish" button in the Lovable editor to deploy instantly.
 
 ## 🤝 Contributing
 
@@ -142,11 +139,4 @@ Click the "Publish" button in the Lovable editor to deploy instantly.
 
 This project is open source and available under the MIT License.
 
-## 🔗 Links
-
-- [Live Demo](https://lovable.dev/projects/47b94d9f-0025-4e5f-a584-e9d820cba011)
-- [Lovable Platform](https://lovable.dev)
-
 ---
-
-Built with ❤️ using Lovable
