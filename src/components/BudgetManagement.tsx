@@ -25,13 +25,18 @@ export const BudgetManagement = ({ open, onOpenChange }: BudgetManagementProps) 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    console.log('BudgetManagement - Form submitted:', { newBudget });
+    
     const budgetAmount = parseFloat(newBudget);
     if (isNaN(budgetAmount) || budgetAmount <= 0) {
+      console.log('BudgetManagement - Validation failed: invalid amount');
       toast.error('Please enter a valid budget amount');
       return;
     }
 
+    console.log('BudgetManagement - About to set budget:', budgetAmount);
     setBudget(budgetAmount);
+    console.log('BudgetManagement - Budget set successfully');
     toast.success('Budget updated successfully!');
     onOpenChange(false);
   };

@@ -62,12 +62,18 @@ export const useExpenseStore = () => {
   }, [budget]);
 
   const addExpense = (expense: Omit<Expense, 'id' | 'createdAt'>) => {
+    console.log('useExpenseStore - addExpense called with:', expense);
     const newExpense: Expense = {
       ...expense,
       id: Date.now().toString(),
       createdAt: new Date().toISOString(),
     };
-    setExpenses(prev => [newExpense, ...prev]);
+    console.log('useExpenseStore - Creating new expense:', newExpense);
+    setExpenses(prev => {
+      const updated = [newExpense, ...prev];
+      console.log('useExpenseStore - Updated expenses array:', updated);
+      return updated;
+    });
   };
 
   const updateExpense = (id: string, updates: Partial<Expense>) => {

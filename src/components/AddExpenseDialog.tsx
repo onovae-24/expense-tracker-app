@@ -23,16 +23,27 @@ export const AddExpenseDialog = ({ open, onOpenChange }: AddExpenseDialogProps) 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    console.log('AddExpense - Form submitted:', { amount, category, description, date });
+    
     if (!amount || !category) {
+      console.log('AddExpense - Validation failed: missing fields');
       toast.error('Please fill in all required fields');
       return;
     }
 
     const expenseAmount = parseFloat(amount);
     if (isNaN(expenseAmount) || expenseAmount <= 0) {
+      console.log('AddExpense - Validation failed: invalid amount');
       toast.error('Please enter a valid amount');
       return;
     }
+
+    console.log('AddExpense - About to add expense:', {
+      amount: expenseAmount,
+      category,
+      description,
+      date,
+    });
 
     addExpense({
       amount: expenseAmount,
@@ -41,6 +52,7 @@ export const AddExpenseDialog = ({ open, onOpenChange }: AddExpenseDialogProps) 
       date,
     });
 
+    console.log('AddExpense - Expense added successfully');
     toast.success('Expense added successfully!');
     
     // Reset form
