@@ -37,8 +37,13 @@ export const useExpenseStore = () => {
     const savedCategories = localStorage.getItem('categories');
     const savedBudget = localStorage.getItem('budget');
 
+    console.log('useExpenseStore - Loading from localStorage');
+    console.log('useExpenseStore - savedExpenses:', savedExpenses);
+
     if (savedExpenses) {
-      setExpenses(JSON.parse(savedExpenses));
+      const parsedExpenses = JSON.parse(savedExpenses);
+      console.log('useExpenseStore - parsed expenses:', parsedExpenses);
+      setExpenses(parsedExpenses);
     }
     if (savedCategories) {
       setCategories(JSON.parse(savedCategories));
@@ -72,6 +77,10 @@ export const useExpenseStore = () => {
     setExpenses(prev => {
       const updated = [newExpense, ...prev];
       console.log('useExpenseStore - Updated expenses array:', updated);
+      console.log('useExpenseStore - Current date:', new Date().toISOString());
+      console.log('useExpenseStore - Expense date:', newExpense.date);
+      // Force localStorage update
+      localStorage.setItem('expenses', JSON.stringify(updated));
       return updated;
     });
   };
@@ -128,6 +137,7 @@ export const useExpenseStore = () => {
     budget,
     totalExpenses,
     thisMonthTotal,
+    thisMonthExpenses,
     budgetProgress,
     budgetAlert,
     addExpense,

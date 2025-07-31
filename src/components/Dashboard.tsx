@@ -13,16 +13,13 @@ import { useExpenseStore } from '@/hooks/useExpenseStore';
 export const Dashboard = () => {
   const [isAddExpenseOpen, setIsAddExpenseOpen] = useState(false);
   const [isBudgetOpen, setIsBudgetOpen] = useState(false);
-  const { expenses, budget, totalExpenses, budgetProgress, budgetAlert } = useExpenseStore();
+  const { expenses, budget, totalExpenses, budgetProgress, budgetAlert, thisMonthTotal, thisMonthExpenses } = useExpenseStore();
 
-  const thisMonthExpenses = expenses.filter(expense => {
-    const expenseDate = new Date(expense.date);
-    const now = new Date();
-    return expenseDate.getMonth() === now.getMonth() && 
-           expenseDate.getFullYear() === now.getFullYear();
-  });
+  // Debug logging
+  console.log('Dashboard - expenses:', expenses);
+  console.log('Dashboard - thisMonthExpenses:', thisMonthExpenses);
+  console.log('Dashboard - thisMonthTotal:', thisMonthTotal);
 
-  const thisMonthTotal = thisMonthExpenses.reduce((sum, expense) => sum + expense.amount, 0);
   const avgExpenseAmount = thisMonthExpenses.length > 0 ? thisMonthTotal / thisMonthExpenses.length : 0;
 
   return (
@@ -142,7 +139,7 @@ export const Dashboard = () => {
 
         <Card className="bg-gradient-card border-0 shadow-soft">
           <CardHeader>
-            <CardTitle>Recent Expenses</CardTitle>
+            <CardTitle>Recent Expenses ({expenses.length} total, {thisMonthExpenses.length} this month)</CardTitle>
           </CardHeader>
           <CardContent>
             <ExpenseList expenses={expenses.slice(0, 5)} showAll={false} />

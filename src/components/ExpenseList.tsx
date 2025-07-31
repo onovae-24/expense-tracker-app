@@ -16,6 +16,10 @@ export const ExpenseList = ({ expenses, showAll = true }: ExpenseListProps) => {
   const { deleteExpense } = useExpenseStore();
   const [editingExpense, setEditingExpense] = useState<Expense | null>(null);
 
+  // Debug logging
+  console.log('ExpenseList - received expenses:', expenses);
+  console.log('ExpenseList - showAll:', showAll);
+
   const handleDelete = (id: string) => {
     deleteExpense(id);
     toast.success('Expense deleted successfully');
